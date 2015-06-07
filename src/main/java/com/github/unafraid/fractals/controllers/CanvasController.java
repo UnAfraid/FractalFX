@@ -28,11 +28,11 @@ public class CanvasController {
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PNG", "*.png"));
         fileChooser.setTitle("Save Map");
         final File file = fileChooser.showSaveDialog(null);
-        if(file != null) {
+        if (file != null) {
             final SnapshotParameters snapshotParameters = new SnapshotParameters();
             snapshotParameters.setFill(Color.TRANSPARENT);
             try {
-                final WritableImage writableImage = new WritableImage((int)canvas.getWidth(),(int)canvas.getHeight());
+                final WritableImage writableImage = new WritableImage((int) canvas.getWidth(), (int) canvas.getHeight());
                 ImageIO.write(SwingFXUtils.fromFXImage(canvas.snapshot(snapshotParameters, writableImage), null), "png", file);
                 Dialogs.showDialog(Alert.AlertType.INFORMATION, "Success!", "The canvas has been saved!", "Your canvas was successfully saved as image on your hard drive!");
             } catch (IOException e) {

@@ -60,8 +60,7 @@ public class MainController implements Initializable {
         try {
             w = Integer.parseInt(width.getText());
             h = Integer.parseInt(height.getText());
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             Dialogs.showDialog(Alert.AlertType.ERROR, "Wrong input", "Invalid width", "The specified width is invalid, it should be numeric!");
             return;
         }
@@ -85,8 +84,7 @@ public class MainController implements Initializable {
         try {
             final Parent CanvasRoot = FXMLLoader.load(getClass().getResource("/views/CanvasView.fxml"));
             scene = new Scene(CanvasRoot);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             Dialogs.showExceptionDialog(Alert.AlertType.ERROR, "Error!", "Error while loading CanvasView.fxml", e);
             return;
         }
@@ -115,8 +113,7 @@ public class MainController implements Initializable {
 
     @FXML
     public void onAboutRequest(ActionEvent event) {
-        try
-        {
+        try {
             final Stage stage = new Stage();
             final Parent root = FXMLLoader.load(getClass().getResource("/views/About.fxml"));
             stage.setScene(new Scene(root));
@@ -124,9 +121,7 @@ public class MainController implements Initializable {
             stage.initStyle(StageStyle.UTILITY);
             stage.setResizable(false);
             stage.show();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             Dialogs.showExceptionDialog(Alert.AlertType.ERROR, "Error!", "Exception during help form creation:", e);
         }
     }

@@ -45,8 +45,8 @@ public class CanvasRender extends Task<Void> {
 
         // Calculate the scale
         final double scale = _fractal.getRatioWidth() / _canvas.getWidth();
-        final int width = (int)_canvas.getWidth();
-        final int height = (int)_canvas.getHeight();
+        final int width = (int) _canvas.getWidth();
+        final int height = (int) _canvas.getHeight();
 
         final List<Pixel> pixels = new ArrayList<>(width * height);
         for (int y = 0; y < height; ++y) {

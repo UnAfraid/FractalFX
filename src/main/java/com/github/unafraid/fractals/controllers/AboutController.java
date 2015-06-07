@@ -7,12 +7,10 @@ import javafx.scene.control.Button;
 /**
  * Created by UnAfraid on 7.6.2015 г..
  */
-public class AboutController
-{
+public class AboutController {
 
-	@FXML
-	public void onOkButton(ActionEvent event)
-	{
-		((Button) event.getSource()).getScene().getWindow().hide();
-	}
+    @FXML
+    public void onOkButton(ActionEvent event) {
+        ((Button) event.getSource()).getScene().getWindow().hide();
+    }
 }
