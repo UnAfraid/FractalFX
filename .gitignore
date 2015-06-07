@@ -1,3 +1,15 @@
+# Eclipse
+.classpath
+.project
+.settings
+.metadata
+bin/
+
+# Gradle
+/.gradle/
+*/build/
+
+
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
 *.class
@@ -8,7 +20,6 @@
 # Package Files #
 *.war
 *.ear
-.gradle/
 .idea/
 *.iml
 

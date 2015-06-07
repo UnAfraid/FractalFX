@@ -1,13 +1,11 @@
 apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
 tasks.withType(JavaCompile) {
@@ -16,7 +14,7 @@ tasks.withType(JavaCompile) {
 
 def generalManifest = manifest {
     attributes('Built-By': System.getProperty('user.name'),
-            'Implementation-URL': 'http://github.com/UnAfraid/')
+            'Implementation-URL': 'https://github.com/UnAfraid/FractalFX')
 }
 
 jar {
