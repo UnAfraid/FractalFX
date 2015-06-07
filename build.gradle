@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+def generalManifest = manifest {
+    attributes('Built-By': System.getProperty('user.name'),
+            'Implementation-URL': 'http://github.com/UnAfraid/')
+}
+
+jar {
+    archiveName = 'FractalsFX.jar'
+    manifest {
+        from(generalManifest)
+        attributes('Main-Class': 'com.github.unafraid.fractals.Main')
+    }
+}

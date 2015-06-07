@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane minWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.unafraid.fractals.controllers.MainController">
+   <center>
+      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1">
+               <children>
+                  <ComboBox fx:id="fractalSelector" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Fractals">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Separator maxHeight="3.0" maxWidth="1.7976931348623157E308">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Label text="Width">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="width" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Width" text="800">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Separator maxHeight="3.0" maxWidth="1.7976931348623157E308">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Label text="Height">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="height" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Height" text="600">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Separator maxHeight="3.0" maxWidth="1.7976931348623157E308">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <CheckBox fx:id="parallelism" mnemonicParsing="false" selected="true" text="Parallelism">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <Separator maxHeight="3.0" maxWidth="1.7976931348623157E308">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Button fx:id="renderButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onRenderRequest" text="Render">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <ProgressBar fx:id="progressBar" maxHeight="15.0" maxWidth="1.7976931348623157E308" progress="0.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </ProgressBar>
+   </bottom>
+   <top>
+      <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="25.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onApplicationExitRequest" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onAboutRequest" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
